@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kelvin Barbosa – Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE  trabalho: portfólio de um analista para uma vaga interna, sóbrio e confiante
+   IDEA   o romaneio / ordem de serviço industrial da GHT: faixas grafite e amarelo, etiquetas de locação
+   PICTURE retrato em fundo amarelo + estande da Exposibram; o macrofluxo das Feiras desenhado como rota
+   COLOUR branco, grafite #2a2b29, amarelo GHT #f9a91b, cinza GHT #5d5e5a; noite #151614
+   TYPE   Saira (letra larga como a marca) + Source Sans 3
+   LAYOUT faixa grafite com retrato à direita e números; cases em bandas alternadas; empilha abaixo de 720px */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#151614);--ink:light-dark(#232422,#eceae4);--mut:light-dark(#5d5e5a,#a9a8a2);--line:light-dark(#dedcd6,#34352f);--panel:light-dark(#f4f3ef,#1e1f1c);--y:#f9a91b;--g:#2a2b29;--yt:light-dark(#8a5a00,#f9b93e)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Source Sans 3",system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:Saira,system-ui,sans-serif;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:700}
+h3{font-size:22px;font-weight:700;margin-bottom:8px}
+p{margin:0 0 12px}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;border-bottom:3px solid var(--y)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:10px max(5vw,16px);flex-wrap:wrap}
+nav .links{display:flex;gap:20px;flex-wrap:wrap}
+nav b{font-family:Saira;font-weight:700;font-size:17px;margin-right:auto}
+nav a{text-decoration:none;font-size:15px;opacity:.85;padding:8px 0}
+nav a:hover,nav a:focus-visible{opacity:1;color:var(--y)}
+/* hero */
+.hero{background:var(--g);color:#fff;padding:0}
+.hero .wrap{max-width:none;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:stretch}
+.hero .txt{padding:clamp(36px,5vw,72px) max(5vw,16px) clamp(32px,4vw,56px);max-width:760px;justify-self:end;width:100%}
+.hero h1{font-size:clamp(40px,5.6vw,66px);font-weight:800}
+.hero .role{font-family:Saira;font-weight:600;font-size:clamp(18px,2vw,22px);color:var(--y);margin:14px 0 18px}
+.hero .lead{max-width:56ch;color:#d9d8d2}
+.hero .photo{position:relative;background:var(--y);min-height:420px}
+.hero .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--y);color:#1d1d1b;font-weight:700;padding:8px 14px;border-radius:4px;font-size:15px;margin-top:8px}
+.badge svg{flex:none}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin-top:30px;background:#40413e;border:2px solid #40413e}
+.stats div{background:var(--g);padding:14px 16px}
+.stats strong{display:block;font-family:Saira;font-size:clamp(26px,3vw,34px);font-weight:800;color:#fff;white-space:nowrap}
+.stats span{font-size:14px;color:#c4c3bd}
+/* labels de locação */
+.tag{display:inline-block;font-family:Saira;font-weight:700;font-size:13px;background:var(--y);color:#1d1d1b;padding:3px 9px;border-radius:3px;margin-bottom:12px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:28px}
+.sec-head p{color:var(--mut);margin:0}
+/* feiras */
+.feira-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.feira-grid figure{margin:0;border-radius:6px;overflow:hidden;background:var(--panel);position:relative}
+.feira-grid figure img{width:100%;height:100%;object-fit:cover}
+figcaption{position:absolute;left:0;bottom:0;background:rgba(20,20,18,.82);color:#fff;font-size:14px;padding:6px 10px;border-top-right-radius:4px}
+.feira-side{display:grid;grid-template-rows:auto auto;gap:16px}
+.feira-photos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.feira-photos figure{aspect-ratio:3/4}
+.main-photo{min-height:360px}
+.quote{background:var(--g);color:#fff;border-radius:6px;padding:22px 24px;border-left:6px solid var(--y)}
+.quote p{font-size:19px;line-height:1.45;margin-bottom:10px}
+.quote small{color:#c4c3bd;font-size:14px}
+/* fluxo */
+.flow{margin-top:36px;background:var(--panel);border-radius:6px;padding:24px clamp(16px,3vw,32px)}
+.flow h3{margin-bottom:6px}
+.flow .sub{color:var(--mut);font-size:15px;margin-bottom:20px}
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative}
+.route::before{content:"";position:absolute;left:8%;right:8%;top:23px;height:4px;background:var(--y)}
+.route li{position:relative;text-align:center;padding:0 6px}
+.route .dot{width:50px;height:50px;border-radius:50%;margin:0 auto 10px;background:var(--g);color:var(--y);display:grid;place-items:center;font-family:Saira;font-weight:800;font-size:18px;border:4px solid var(--y);position:relative}
+.route b{display:block;font-size:15px;line-height:1.25}
+.route span{display:block;font-size:14px;color:var(--mut);line-height:1.3;margin-top:4px}
+.mkt{margin-top:18px;display:flex;gap:10px;align-items:center;font-size:15px;color:var(--mut);flex-wrap:wrap}
+.mkt i{font-style:normal;display:inline-block;border:2px dashed var(--y);padding:4px 10px;border-radius:4px;color:var(--ink);font-weight:600}
+/* cases */
+.alt{background:var(--panel)}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center}
+.case + .case{margin-top:clamp(40px,5vw,64px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.case ul{padding-left:20px;margin:10px 0 0}
+.case li{margin-bottom:6px}
+.case .pic{border-radius:6px;overflow:hidden}
+.case .pic img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.loc{display:grid;gap:14px}
+.loc .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.loc .lbl{font-size:14px;color:var(--mut);width:5.5em}
+.chip{font-family:Saira;font-weight:700;font-size:clamp(17px,2.2vw,22px);padding:10px 14px;border-radius:4px;white-space:nowrap}
+.chip.old{background:var(--bg);border:2px dashed var(--mut);color:var(--mut);text-decoration:line-through;text-decoration-thickness:2px}
+.chip.new{background:var(--y);color:#1d1d1b;display:flex;gap:0;padding:0;overflow:hidden}
+.chip.new span{padding:10px 12px;border-right:2px solid rgba(0,0,0,.18)}
+.chip.new span:last-child{border:0}
+.parts{display:flex;gap:0;font-size:13px;color:var(--mut);padding-left:calc(5.5em + 14px)}
+.parts span{min-width:0}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+.steps li::before{counter-increment:s;content:counter(s);font-family:Saira;font-weight:800;background:var(--g);color:var(--y);width:36px;height:36px;border-radius:4px;display:grid;place-items:center}
+.steps li.now{border:2px solid var(--y)}
+.steps em{font-style:normal;color:var(--yt);font-weight:700;font-size:14px;margin-left:6px}
+.meter{margin-top:16px}
+.meter .bar{height:14px;background:var(--line);border-radius:7px;overflow:hidden}
+.meter .bar i{display:block;height:100%;width:90%;background:var(--y)}
+.meter div:first-child{display:flex;justify-content:space-between;font-size:14px;color:var(--mut);margin-bottom:6px}
+.radar{background:var(--g);color:#fff;border-radius:6px;padding:22px;display:grid;gap:10px}
+.radar .r{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px;align-items:center;font-size:15px}
+.radar .r b{color:var(--y);font-family:Saira;font-weight:700}
+.radar .r span{color:#d9d8d2}
+.dash{background:#6b6b69}
+.case-ind{grid-template-columns:minmax(0,1fr)}
+.case-ind ul{columns:2 22em;column-gap:40px}
+.case-ind li{break-inside:avoid}
+.case-ind .pic{order:0!important}
+.case-sep{margin-top:clamp(40px,5vw,64px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.dash img{aspect-ratio:auto!important;object-fit:contain!important}
+.acc{margin-top:clamp(40px,5vw,64px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.acc-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:16px}
+.acc-head p{color:var(--mut);margin:0;max-width:60ch}
+.acc-kpi{display:flex;gap:28px}
+.acc-kpi strong{display:block;font-family:Saira,system-ui,sans-serif;font-size:clamp(26px,3vw,34px);font-weight:800;white-space:nowrap}
+.acc-kpi span{font-size:14px;color:var(--mut)}
+.fig{position:relative;min-height:320px;background:var(--bg);border:1px solid var(--line);border-radius:6px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font:14px "Source Sans 3",system-ui,sans-serif;fill:var(--mut)}
+.sw{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin:0 6px 0 2px}
+.sw.y{background:var(--y)}.sw.g{background:var(--ink)}
+@media (max-width:720px){.acc-head{grid-template-columns:minmax(0,1fr)}}
+/* aderência */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{text-align:left;font-family:Saira;font-weight:700;font-size:15px;padding:10px 12px;border-bottom:3px solid var(--y)}
+td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;width:32%}
+td .ok{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--y);margin-right:8px;vertical-align:middle}
+td .dev{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid var(--mut);margin-right:8px;vertical-align:middle}
+.legend{font-size:14px;color:var(--mut);margin-top:12px}
+/* trajetória */
+.tl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin-top:8px}
+.tl div{border-top:4px solid var(--line);padding:14px 10px 0 0;position:relative}
+.tl div::before{content:"";position:absolute;top:-10px;left:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:4px solid var(--mut)}
+.tl div.cur{border-top-color:var(--y)}
+.tl div.cur::before{border-color:var(--y);background:var(--y)}
+.tl time{font-family:Saira;font-weight:700;font-size:15px;white-space:nowrap}
+.tl b{display:block;font-size:16px;line-height:1.25;margin-top:4px}
+.tl span{font-size:14px;color:var(--mut)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:16px;margin-top:36px}
+.edu > div{background:var(--panel);border-radius:6px;padding:18px 20px}
+.edu h3{font-size:18px;margin-bottom:8px}
+.edu ul{margin:0;padding-left:18px;font-size:16px}
+.edu li{margin-bottom:4px}
+footer{background:var(--g);color:#fff;border-top:6px solid var(--y)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center}
+footer h2{color:#fff}
+footer p{color:#d9d8d2}
+.contact{display:grid;gap:10px;font-size:17px}
+.contact div{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.contact span{color:var(--y);font-family:Saira;font-weight:700;font-size:14px;width:6em}
+.contact a{overflow-wrap:anywhere}
+.fine{font-size:13px;color:#a9a8a2;margin-top:28px}
+.logo-strip{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mut);margin-top:22px}
+.logo-strip img{height:28px;width:auto;background:#fff;padding:4px 8px;border-radius:3px}
+@media (max-width:1100px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.route{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:24px}.route::before{display:none}.tl{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}}
+@media (max-width:720px){
+ .hero .wrap,.sec-head,.feira-grid,.case,footer .wrap{grid-template-columns:minmax(0,1fr)}
+ .hero .photo{min-height:340px;order:-1}
+ .case .pic{order:-1}
+ nav .links{display:none}
+ .main-photo{min-height:260px}
+}
+@media (max-width:600px){
+ .route{grid-template-columns:minmax(0,1fr)}
+ .route li{display:grid;grid-template-columns:50px minmax(0,1fr);text-align:left;gap:12px;align-items:center}
+ .route .dot{margin:0;grid-row:1 / span 2}
+ .route b,.route span{grid-column:2}
+ .tl{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ table{font-size:14px}
+ .stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{border:0;padding:3px 0;width:auto}
+ .parts{display:none}
+}
+@media (prefers-reduced-motion:no-preference){.route .dot{animation:pop .5s ease-out both}.route li:nth-child(2) .dot{animation-delay:.08s}.route li:nth-child(3) .dot{animation-delay:.16s}.route li:nth-child(4) .dot{animation-delay:.24s}.route li:nth-child(5) .dot{animation-delay:.32s}.route li:nth-child(6) .dot{animation-delay:.4s}@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><b>Kelvin Barbosa</b><span class="links"><a href="#feiras">Feiras</a><a href="#projetos">Projetos</a><a href="#vaga">Aderência à vaga</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a></span></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <h1>Kelvin Barbosa da Silva</h1>
+      <div class="role">Processos, projetos e operação logística</div>
+      <p class="lead">Analista de Operações Logísticas Pleno na GHT. Identifico processos sem padrão, redesenho o fluxo e conduzo a implantação com as áreas envolvidas, com o conhecimento da operação que garante que a solução funcione na prática.</p>
+      <span class="badge"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" fill="none" stroke="#1d1d1b" stroke-width="2.4"/><path d="M8 14l-2 8 6-3 6 3-2-8" fill="none" stroke="#1d1d1b" stroke-width="2.4" stroke-linejoin="round"/></svg>Premiado no programa Valores que Movem 2026</span>
+      <div class="stats">
+        <div><strong>8+ anos</strong><span>em logística, FedEx e GHT</span></div>
+        <div><strong>37 mil+</strong><span>unidades na transferência UNION → CDSP</span></div>
+        <div><strong>5</strong><span>projetos de processo e melhoria</span></div>
+        <div><strong>90/100</strong><span>meta do novo programa 5S no CD</span></div>
+      </div>
+    </div>
+    <div class="photo"><img src="img/retrato.jpg" alt="Retrato de Kelvin Barbosa da Silva"></div>
+  </div>
+</header>
+
+<section class="band" id="feiras">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="tag">Case principal</span><h2>Feiras: de um processo sem controle a um macrofluxo premiado</h2></div>
+      <p>Exposibram e Automec. Antes, a separação seguia direto para a embalagem, sem conferência, e romaneio e nota eram gerados por terceiros a partir de uma lista. Assumi a condução e integrei Logística, Marketing e Tributário em um fluxo único.</p>
+    </div>
+    <div class="feira-grid">
+      <figure class="main-photo"><img src="img/exposibram-1.jpg" alt="Estande da GHT na Exposibram"><figcaption>Estande GHT · Exposibram</figcaption></figure>
+      <div class="feira-side">
+        <div class="feira-photos">
+          <figure><img src="img/equipe-feira.jpg" alt="Kelvin com a equipe no estande da GHT"><figcaption>Com a equipe na montagem</figcaption></figure>
+          <figure><img src="img/selfie-capacete.jpg" alt="Kelvin de capacete no estande da GHT"><figcaption>Acompanhamento em campo</figcaption></figure>
+        </div>
+        <blockquote class="quote" style="margin:0">
+          <p>“Trabalho sensacional, organizado, comunicação assertiva e detalhes.”</p>
+          <small>Fernando Cassiano, Gerente de Marketing · e-mail de 26/08/2024, após a primeira Exposibram sob minha condução</small>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h3>O macrofluxo implantado</h3>
+      <p class="sub">Mesmo padrão de conferência dos pedidos da Logística, com documentação fiscal integrada e divergências registradas.</p>
+      <ol class="route">
+        <li><div class="dot">1</div><b>Separação</b><span>itens da lista da feira</span></li>
+        <li><div class="dot">2</div><b>Romaneio</b><span>emitido por mim a partir do separado</span></li>
+        <li><div class="dot">3</div><b>Conferência</b><span>Expedição confere pelo romaneio</span></li>
+        <li><div class="dot">4</div><b>Nota fiscal</b><span>Tributário emite a partir do romaneio</span></li>
+        <li><div class="dot">5</div><b>Feira</b><span>envio e exposição</span></li>
+        <li><div class="dot">6</div><b>Retorno</b><span>NF de devolução dos itens de fornecedores</span></li>
+      </ol>
+      <div class="mkt"><i>Report em tempo real ao Marketing</i> em todas as etapas · divergências documentadas</div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="projetos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="tag">Projetos e melhorias</span><h2>Padrões pensados para durar e escalar</h2></div>
+      <p>Projetos que conduzo ou conduzi no CDSP, todos com o mesmo princípio: padronizar, testar em piloto e só então expandir.</p>
+    </div>
+
+    <article class="case">
+      <div>
+        <h3>Transferência de estoque UNION → CDSP</h3>
+        <p>Projeto com prazo e muitas interdependências: mais de 37 mil unidades e 1.611 tipos de itens, com conferência e conciliação na chave produto + fornecedor.</p>
+        <h3 style="margin-top:22px">Padronização do endereçamento da UNION</h3>
+        <p>Proposta minha, aprovada pela gerência. As locações seguiam um código sem ordem; o novo padrão segue rua, módulo e nível e já é reconhecível por um futuro WMS/SAP.</p>
+        <div class="loc">
+          <div class="row"><span class="lbl">Antes</span><span class="chip old">SURxxxCyy</span></div>
+          <div class="row"><span class="lbl">Agora</span><span class="chip new"><span>U</span><span>Rua</span><span>Módulo</span><span>Nível</span></span></div>
+          <div class="parts">U = UNION, no mesmo padrão do novo galpão</div>
+        </div>
+      </div>
+      <div class="pic"><img src="img/union-estoque.jpg" alt="Estoque da UNION organizado após a transferência"></div>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Unificação dos programas 5S e Organização de Estoque</h3>
+        <p>Dois programas com metas separadas viraram um processo único, sob minha responsabilidade, aprovado pela gerência.</p>
+        <div class="meter"><div><span>Meta do piloto no CD</span><b>90 / 100</b></div><div class="bar"><i></i></div></div>
+      </div>
+      <ol class="steps">
+        <li>Modelo único de auditoria</li>
+        <li>Questionário e critérios de nota</li>
+        <li>Plataforma de coleta</li>
+        <li class="now"><span>Piloto no CD <em>em andamento</em></span></li>
+        <li><span>Expansão para as filiais <em>próximo passo</em></span></li>
+      </ol>
+    </article>
+
+    <article class="case case-ind">
+      <div>
+        <h3>Indicadores de gestão de estoque</h3>
+        <p>Painéis em Excel que acompanho mensalmente para a base nacional:</p>
+        <ul>
+          <li><b>SLA de análise de inventário:</b> cada divergência tem prazo de 20 dias para ser concluída, com semáforo por dias em análise. Indicador atual: <b>96% dentro do SLA</b>.</li>
+          <li><b>Acurácia nacional:</b> ILA e IRA mês a mês a partir dos inventários do CD e das filiais.</li>
+          <li><b>Cancelamentos de pedidos:</b> Pareto por motivo, filial, departamento e autor para identificar ofensores.</li>
+        </ul>
+      </div>
+      <div class="pic dash wide-pic"><img src="img/painel-sla.jpg" alt="Painel de gestão da análise de inventário: indicador de SLA em 96% e distribuição por dias em análise"></div>
+    </article>
+
+    <div class="acc">
+      <div class="acc-head">
+        <div><h3>Acurácia nacional em 2026</h3><p>ILA e IRA se mantiveram acima de 92% em todos os meses; o pior período foi março a maio, com recuperação a partir de junho.</p></div>
+        <div class="acc-kpi"><div><strong>95,65%</strong><span>ILA acumulado</span></div><div><strong>95,06%</strong><span>IRA acumulado</span></div></div>
+      </div>
+      <div class="fig" id="accfig" role="img" aria-label="Gráfico de linhas de ILA e IRA de janeiro a outubro de 2026, entre 92% e 99%"></div>
+      <p class="legend"><span class="sw y"></span>ILA <span class="sw g"></span>IRA · base nacional, 01/01 a 08/10/2026 (outubro parcial) · fonte: planilha Inventário Geral – Acurácia CDSP</p>
+    </div>
+
+    <article class="case case-sep">
+      <div class="pic"><img src="img/radar-painel.jpg" alt="Ilustração de painel de indicadores em ambiente de armazém"></div>
+      <div>
+        <h3>Radar Estratégico de Supply Chain</h3>
+        <p>Portal que desenvolvi com apoio de IA para reunir, em um só lugar, os sinais externos que afetam as decisões das áreas.</p>
+        <div class="radar" aria-label="Blocos monitorados pelo Radar">
+          <div class="r"><b>Câmbio</b><span>cotações e variações</span></div>
+          <div class="r"><b>Commodities</b><span>preços de referência</span></div>
+          <div class="r"><b>Logística</b><span>cenário de transporte e comércio exterior</span></div>
+          <div class="r"><b>Clientes</b><span>notícias de clientes e mercado</span></div>
+        </div>
+        <p style="margin-top:14px">Também uso IA para produzir os relatórios de resultado do programa 5S.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="vaga">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="tag">Analista de Projetos e Processos Sr.</span><h2>Onde minha experiência encontra a vaga</h2></div>
+      <p>Cada atividade da vaga ao lado de uma entrega real. Onde ainda estou desenvolvendo, digo isso também.</p>
+    </div>
+    <div class="scroll">
+      <table class="stack">
+        <thead><tr><th>Atividade ou requisito</th><th>Evidência</th></tr></thead>
+        <tbody>
+          <tr><td>Mapear processos e desenhar o modelo futuro</td><td><span class="ok"></span>Macrofluxo das Feiras: processo sem conferência redesenhado e implantado</td></tr>
+          <tr><td>Estruturar e acompanhar projetos</td><td><span class="ok"></span>Transferência UNION → CDSP; unificação 5S + Organização de Estoque com piloto e plano de expansão</td></tr>
+          <tr><td>Indicadores, dashboards e reportes</td><td><span class="ok"></span>Acurácia nacional, Pareto de cancelamentos, meta 90/100 do 5S, Power BI</td></tr>
+          <tr><td>Disseminar padrões e templates</td><td><span class="ok"></span>Modelo único de auditoria para CD e filiais; padrão de endereçamento replicável</td></tr>
+          <tr><td>Implantação de sistemas como ERP e WMS</td><td><span class="ok"></span>Endereçamento da UNION preparado para WMS/SAP; uso de WMS na FedEx</td></tr>
+          <tr><td>Automação e IA aplicada à gestão</td><td><span class="ok"></span>Radar Estratégico de Supply Chain; relatórios com IA; graduação em IA em andamento</td></tr>
+          <tr><td>Certificação em melhoria contínua</td><td><span class="ok"></span>Lean Six Sigma Yellow Belt (FM2S)</td></tr>
+          <tr><td>PMO e metodologias formais de projetos</td><td><span class="dev"></span>Em desenvolvimento: aplico governança prática (piloto, ritmo mensal, meta única) e sigo estudando as metodologias formais</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend"><span class="ok" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--y);margin-right:6px"></span>entregue · <span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid var(--mut);margin:0 6px 0 4px"></span>em desenvolvimento</p>
+  </div>
+</section>
+
+<section class="band alt" id="trajetoria">
+  <div class="wrap">
+    <h2 style="margin-bottom:34px">Trajetória</h2>
+    <div class="tl">
+      <div><time>2017</time><b>Operador de Serviço Logístico</b><span>FedEx · Guarulhos</span></div>
+      <div><time>2019</time><b>Conferente de Operação Logística</b><span>FedEx · Guarulhos</span></div>
+      <div><time>2021</time><b>Auxiliar de Operação Logística</b><span>FedEx · Cajamar</span></div>
+      <div><time>2021–2024</time><b>Assistente de Logística e Transporte</b><span>FedEx · Guarulhos</span></div>
+      <div class="cur"><time>2025</time><b>Analista de Operações Logísticas Pleno</b><span>GHT · CDSP</span></div>
+      <div><time>Próximo passo</time><b>Projetos e Processos</b><span>Planejamento Estratégico</span></div>
+    </div>
+    <div class="edu">
+      <div><h3>Formação</h3><ul><li>Graduação em Inteligência Artificial, Cruzeiro do Sul (2026–2028, em andamento)</li><li>Tecnólogo em Logística, Eniac (não concluído)</li></ul></div>
+      <div><h3>Certificações e cursos</h3><ul><li>Lean Six Sigma Yellow Belt – FM2S</li><li>Fundamentos em Gestão de Pessoas e de Gestão e Liderança – FM2S</li><li>Power BI: indicadores (KPIs) – Empower Data</li><li>QDM – Gestão da Qualidade – FedEx</li></ul></div>
+      <div><h3>Ferramentas</h3><ul><li>Excel e Power BI</li><li>SPR, WMS e TMS</li><li>IA generativa: assistentes, agentes e análise de dados</li></ul></div>
+    </div>
+    <div class="logo-strip"><img src="img/ght-logo.png" alt="GHT – Grupo Hidrau Torque">Projetos desenvolvidos na GHT – Grupo Hidrau Torque</div>
+  </div>
+</section>
+
+<footer class="band" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Vamos conversar sobre os próximos projetos</h2>
+      <p style="margin-top:12px">Disponível para apresentar cada case em detalhe, com os materiais e números de cada um.</p>
+    </div>
+    <div class="contact">
+      <div><span>E-mail</span><a href="mailto:kelvin.silva@grupoht.com.br">kelvin.silva@grupoht.com.br</a></div>
+      <div><span>Telefone</span>(11) 95482-9424</div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/kelvin-silva-48394b247">linkedin.com/in/kelvin-silva-48394b247</a></div>
+    </div>
+  </div>
+  <div class="wrap"><p class="fine">Portfólio pessoal de Kelvin Barbosa da Silva. Imagens de feiras e instalações da GHT usadas apenas para ilustrar os projetos.</p></div>
+</footer>
+
+<script>
+{
+const m=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out'];
+const ila=[96.68,97.24,93.91,93.28,92.99,98.71,96.63,97.24,94.62,95.91];
+const ira=[97.11,96.85,92.80,92.47,92.50,98.14,95.27,96.56,93.74,95.26];
+const s=document.getElementById('accfig');
+const draw=()=>{
+ const W=s.clientWidth,H=s.clientHeight,L=48,R=narrow()?16:52,T=24,B=36,lo=91,hi=100;
+ function narrow(){return W<520}
+ const x=i=>L+i*(W-L-R)/(m.length-1), y=v=>T+(hi-v)*(H-T-B)/(hi-lo);
+ let g='';
+ for(let v=92;v<=100;v+=2){g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+5}" text-anchor="end">${v}%</text>`}
+ m.forEach((t,i)=>{if(!narrow()||i%2==0)g+=`<text x="${x(i)}" y="${H-10}" text-anchor="middle">${t}</text>`});
+ const path=a=>a.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+ g+=`<path d="${path(ira)}" fill="none" stroke="var(--ink)" stroke-width="2.5"/>`;
+ g+=`<path d="${path(ila)}" fill="none" stroke="var(--y)" stroke-width="3.5"/>`;
+ ila.forEach((v,i)=>g+=`<circle cx="${x(i)}" cy="${y(v)}" r="4.5" fill="var(--y)"><title>${m[i]}: ILA ${v.toFixed(2).replace('.',',')}%</title></circle>`);
+ ira.forEach((v,i)=>g+=`<circle cx="${x(i)}" cy="${y(v)}" r="3.5" fill="var(--ink)"><title>${m[i]}: IRA ${v.toFixed(2).replace('.',',')}%</title></circle>`);
+ const b=5;g+=`<text x="${x(b)}" y="${y(ila[b])-14}" text-anchor="middle" style="fill:var(--ink);font-weight:700">${ila[b].toFixed(2).replace('.',',')}%</text>`;
+ const w=4;g+=`<text x="${x(w)}" y="${y(ira[w])+24}" text-anchor="middle" style="fill:var(--ink);font-weight:700">${ira[w].toFixed(2).replace('.',',')}%</text>`;
+ s.innerHTML=`<svg viewBox="0 0 ${W} ${H}">${g}</svg>`;
+};
+const ro=new ResizeObserver(draw);ro.observe(s);
+}
+</script>
+</body>
+</html>
